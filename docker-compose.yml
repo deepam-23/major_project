@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: aiml_digital_twin
+      POSTGRES_USER: aiml_app
+      POSTGRES_PASSWORD: change-me-in-local-development
+    ports:
+      - "5432:5432"
+    volumes:
+      - aiml_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  aiml_postgres_data:
